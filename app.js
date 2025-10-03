@@ -116,11 +116,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function enviarPedidoPorWhatsApp() {
-        // ... (esta función se mantiene igual)
+        const nombre = document.getElementById('cliente-nombre').value.trim();
+        const telefono = document.getElementById('cliente-telefono').value.trim();
+        const direccion = document.getElementById('cliente-direccion').value.trim();
+
+        if (!nombre || !telefono) {
+            alert('Por favor, completa tu Nombre y Teléfono para continuar.');
+            return;
+        }
+
         let mensaje = '¡Hola! Quisiera hacer el siguiente pedido:\n\n';
+        mensaje += `*Datos del Cliente:*\n`;
+        mensaje += `Nombre: ${nombre}\n`;
+        mensaje += `Teléfono: ${telefono}\n`;
+
+        if (direccion) {
+            mensaje += `Dirección: ${direccion}\n`;
+        }
+
+        mensaje += '\n*Productos:*\n';
         carrito.forEach(item => {
-            mensaje += `- ${item.cantidad} ${item.unidad} de *${item.nombre}*\n`;
+            mensaje += `- ${item.cantidad} x ${item.nombre}\n`;
         });
+
         const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
         mensaje += `\n*Total estimado: $${total.toFixed(2)}*`;
 

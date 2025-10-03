@@ -259,4 +259,8 @@ h2 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; mar
     #total-pedido {
         font-size: 1.2rem;
     }
+
+    .modal-contenido {
+        max-width: calc(100% - 30px);
+    }
 }
