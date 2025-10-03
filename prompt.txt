@@ -1,0 +1,11 @@
+Necesito que modifiques el archivo style.css para arreglar el posicionamiento y la funcionalidad de los íconos en el header. Realiza los siguientes cambios:
+En el selector header:
+Cambia la propiedad justify-content a space-between. Esto empujará el contenido del título a la izquierda y el contenedor de los íconos a la derecha.
+Elimina la propiedad text-align: center; ya que ahora flexbox controlará el alineamiento.
+En el selector .header-content (el contenedor del título):
+Elimina por completo las siguientes tres propiedades: position: absolute;, left: 50%; y transform: translateX(-50%);. Esto es crucial para que el título vuelva al flujo normal del documento y deje de superponerse a los botones.
+En el selector .header-icons (el contenedor de los íconos):
+Para asegurar que siempre esté por encima de cualquier otro elemento y sea clickeable, añade la propiedad z-index: 10;.
+En el selector .instagram-btn:
+Para hacerlo un poco más pequeño, cambia su width y height a 45px.
+No es necesario modificar el index.html, ya que el enlace de Instagram (href y target) está correctamente definido.

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camiseta Deportiva Personalizada",
+    "precio": 15.00,
+    "descripcion": "Camiseta de poliéster ideal para sublimación. Calidad premium.",
+    "imagen": "images/camiseta1.jpg",
+    "unidad": "unidades"
+  },
+  {
+    "id": 2,
+    "nombre": "Tela Sublimada por Metro",
+    "precio": 12.50,
+    "descripcion": "Tela personalizable con el diseño que elijas. Venta por metro lineal.",
+    "imagen": "images/tela1.jpg",
+    "unidad": "metros"
+  },
+  {
+    "id": 3,
+    "nombre": "Mochila Escolar Reforzada",
+    "precio": 25.00,
+    "descripcion": "Mochila resistente para uso diario, personalizable con logos o nombres.",
+    "imagen": "images/mochila1.jpg",
+    "unidad": "unidades"
+  },
+  {
+    "id": 4,
+    "nombre": "Bandera Personalizada en Tela",
+    "precio": 35.00,
+    "descripcion": "Bandera de tela poliéster, ideal para eventos, equipos o decoración.",
+    "imagen": "images/bandera1.jpg",
+    "unidad": "unidades"
+  }
+]

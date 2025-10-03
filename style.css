@@ -1,0 +1,235 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header rediseñado y centrado */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    height: 60px; /* O el tamaño que prefieras */
+    width: auto;
+}
+
+.header-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1rem; /* Letra más importante */
+    color: #bdc3c7;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- ESTILOS DE ICONOS DEL HEADER --- */
+.header-icons {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.instagram-btn {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.carrito-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative; /* Para posicionar el contador */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none; /* Oculto por defecto */
+}
+
+.carrito-contador.visible {
+    display: flex; /* Se muestra cuando hay productos */
+}
+
+
+/* --- ESTILOS DEL MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translateY(-50px);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.visible .modal-contenido {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cerrar-modal {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+/* Estilos para el formulario de datos del cliente */
+.datos-cliente h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.datos-cliente input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+#modal-carrito-container {
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+#modal-carrito-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#modal-carrito-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- ESTILOS DE PRODUCTOS Y BOTONES (SIN CAMBIOS GRANDES) --- */
+
+h2 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; margin-bottom: 20px; }
+#productos-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.producto-card { background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+.producto-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.producto-card img { max-width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
+.producto-card h3 { margin: 10px 0; }
+.producto-card .precio { font-weight: bold; color: #27ae60; font-size: 1.2rem; }
+.producto-acciones { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; }
+.producto-card .input-cantidad { width: 80px; padding: 5px; text-align: center; }
+.producto-card button { background-color: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; }
+.producto-card button:hover { background-color: #2980b9; }
+
+#total-pedido { font-weight: bold; font-size: 1.3rem; text-align: right; margin-top: 20px; }
+#confirmar-pedido { width: 100%; padding: 12px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; margin-top: 15px; }
+#confirmar-pedido:hover { background-color: #27ae60; }
+.whatsapp-flotante { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; }
+.whatsapp-flotante svg { width: 35px; height: 35px; }
+
+@media (max-width: 900px) {
+    .producto-card {
+        padding: 12px;
+    }
+
+    .producto-card img {
+        height: 150px;
+    }
+
+    .producto-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .producto-card p {
+        font-size: 0.9rem;
+    }
+
+    .producto-card .precio {
+        font-size: 1.1rem;
+    }
+
+    .producto-card button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
